@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {ToolkitTools} from './webmcp'
 import {Link,NavLink,Outlet,useLocation} from 'react-router-dom'
-import {LayoutDashboard,BookOpen,BriefcaseBusiness,ShoppingBag,Wallet,Coffee,House,Users,CalendarDays,Activity,Bell,ArrowUpRight,ChevronRight,Plus,LogOut,UserRound,Grid2X2,MapPin} from 'lucide-react'
+import {LayoutDashboard,BookOpen,BriefcaseBusiness,ShoppingBag,Wallet,Coffee,House,Users,CalendarDays,Activity,Bell,ArrowUpRight,ChevronRight,Plus,LogOut,UserRound,Grid2X2,MapPin,Soup} from 'lucide-react'
 import {Brand,ErrorBox,Modal} from './ui'
 import {ThemeControl} from './ThemeControl'
 import {useStore,errorText} from '../lib/store'
@@ -13,6 +13,7 @@ export const modules=[
 {path:'takvim',label:'Takvimim',icon:CalendarDays,group:'',color:'pink'},
 {path:'pazar',label:'İkinci el pazarı',icon:ShoppingBag,group:'YAŞAM & BÜTÇE',color:'yellow'},
 {path:'butce',label:'Bütçem',icon:Wallet,group:'',color:'green'},
+{path:'mutfak',label:'Ne pişirsem?',icon:Soup,group:'',color:'yellow'},
 {path:'mekanlar',label:'Öğrenci dostu mekanlar',icon:Coffee,group:'',color:'pink'},
 {path:'evler',label:'Ev devretme',icon:House,group:'',color:'blue'},
 {path:'oda-arkadasi',label:'Oda arkadaşı',icon:Users,group:'',color:'lavender'},

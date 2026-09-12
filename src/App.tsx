@@ -12,6 +12,7 @@ import { NotesPage } from './pages/academic'
 import { InternshipsPage } from './pages/internships'
 import { ListingsPage } from './pages/listings'
 import { BudgetPage } from './pages/budget'
+import { RecipesPage } from './pages/recipes'
 import { CalendarPage, NotificationsPage } from './pages/calendar'
 import { ClubsPage } from './pages/community'
 import { CrowdPage } from './pages/crowd'
@@ -34,6 +35,6 @@ export function Landing(){return <div className="landing">
 function HeaderlessThemeControl(){const {pathname}=useLocation();const hasOwnHeader=pathname==='/'||pathname.startsWith('/app')||pathname.startsWith('/demo');return hasOwnHeader?null:<ThemeControl/>}
 function App(){return <HashRouter><StoreProvider><ScrollTop/><SpeechReading/><HeaderlessThemeControl/><Routes>
 <Route path="/gizlilik" element={<PolicyPage privacy/>}/><Route path="/kosullar" element={<PolicyPage/>}/><Route path="/" element={<Landing/>}/><Route path="/giris" element={<AuthPage mode="login"/>}/><Route path="/kayit" element={<AuthPage mode="signup"/>}/><Route path="/sifremi-unuttum" element={<AuthPage mode="reset"/>}/><Route path="/sifre-yenile" element={<AuthPage mode="recovery"/>}/>
-{['/app','/demo'].map(base=><Route key={base} path={base} element={<Gate><Layout/></Gate>}><Route index element={<Dashboard/>}/><Route path="notlar" element={<NotesPage/>}/><Route path="stajlar" element={<InternshipsPage/>}/><Route path="pazar" element={<ListingsPage kind="market"/>}/><Route path="evler" element={<ListingsPage kind="housing"/>}/><Route path="oda-arkadasi" element={<ListingsPage kind="roommate"/>}/><Route path="butce" element={<BudgetPage/>}/><Route path="takvim" element={<CalendarPage/>}/><Route path="mekanlar" element={<PlacesPage/>}/><Route path="kulupler" element={<ClubsPage/>}/><Route path="yogunluk" element={<CrowdPage/>}/><Route path="profil" element={<ProfilePage/>}/><Route path="bildirimler" element={<NotificationsPage/>}/><Route path="araclar" element={<ToolsPage/>}/></Route>)}
+{['/app','/demo'].map(base=><Route key={base} path={base} element={<Gate><Layout/></Gate>}><Route index element={<Dashboard/>}/><Route path="notlar" element={<NotesPage/>}/><Route path="stajlar" element={<InternshipsPage/>}/><Route path="pazar" element={<ListingsPage kind="market"/>}/><Route path="evler" element={<ListingsPage kind="housing"/>}/><Route path="oda-arkadasi" element={<ListingsPage kind="roommate"/>}/><Route path="butce" element={<BudgetPage/>}/><Route path="mutfak" element={<RecipesPage/>}/><Route path="takvim" element={<CalendarPage/>}/><Route path="mekanlar" element={<PlacesPage/>}/><Route path="kulupler" element={<ClubsPage/>}/><Route path="yogunluk" element={<CrowdPage/>}/><Route path="profil" element={<ProfilePage/>}/><Route path="bildirimler" element={<NotificationsPage/>}/><Route path="araclar" element={<ToolsPage/>}/></Route>)}
 <Route path="*" element={<div className="empty"><h1>Bu sayfa kampüste değil.</h1><Link className="button" to="/">Ana sayfaya dön</Link></div>}/></Routes></StoreProvider></HashRouter>}
 export default App

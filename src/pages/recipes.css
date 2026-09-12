@@ -1,0 +1,17 @@
+.recipe-panel {display: flex; flex-direction: column; gap: 14px; padding: 22px; margin-bottom: 24px}
+.recipe-add-row {display: flex; gap: 10px}
+.recipe-add-row input {flex: 1; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 11px; padding: 11px 13px; font-size: 15px; min-width: 0}
+.recipe-suggestions, .recipe-chips {display: flex; flex-wrap: wrap; gap: 8px}
+.chip {display: inline-flex; align-items: center; gap: 6px; background: var(--surface-soft); color: var(--muted); border: 1px solid var(--line); border-radius: 20px; padding: 7px 13px; font-size: 13px; font-weight: 500}
+.chip.selected {background: var(--tone-blue); color: var(--blue); border-color: transparent}
+.chip.selected button {display: flex; color: inherit; opacity: .75}
+.chip.selected button:hover {opacity: 1}
+.recipe-grid {margin-top: 4px}
+.recipe-card {display: flex; flex-direction: column; overflow: hidden; padding: 0}
+.recipe-card img, .recipe-placeholder {width: 100%; height: 160px; object-fit: cover; background: var(--surface-soft)}
+.recipe-placeholder {display: flex; align-items: center; justify-content: center; color: var(--muted)}
+.recipe-card-body {padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px}
+.recipe-card-body h2 {font-size: 15px; line-height: 1.5}
+.recipe-card-body p {font-size: 12.5px; color: var(--muted); margin: 0}
+.recipe-missing {overflow-wrap: anywhere}
+.recipe-card-body .text-button {margin-top: 6px}
