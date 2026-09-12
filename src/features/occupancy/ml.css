@@ -1,0 +1,143 @@
+.crowd-view-tabs .tabs button {display: inline-flex; align-items: center; gap: 8px}
+.ml-page {min-width: 0; color: #222b40}
+.ml-page-heading {display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-bottom: 22px}
+.ml-kicker {display: flex; align-items: center; gap: 8px; color: var(--blue); font-size: 12px; letter-spacing: 1.5px; font-weight: 700}
+.ml-kicker > span {width: 6px; height: 6px; border-radius: 50%; background: var(--blue)}
+.ml-page h1 {font-size: 32px; line-height: 1.25; letter-spacing: -1px; margin: 12px 0}
+.ml-page-heading p {color: var(--muted); font-size: 15px; line-height: 1.7}
+.ml-tag {display: inline-flex; align-items: center; gap: 6px; background: #f1edff; color: #7f60c8; border-radius: 8px; padding: 8px 10px; font-size: 12px; flex-shrink: 0}
+.ml-disclosure {display: flex; align-items: flex-start; gap: 10px; background: #fff5d7; color: #765b19; border: 1px solid #f4e4b8; border-radius: 12px; padding: 16px 18px; font-size: 14px; line-height: 1.8}
+.ml-disclosure svg {flex-shrink: 0; margin-top: 4px}
+.ml-overview, .ml-technical {background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px; margin-top: 22px}
+.ml-overview-heading, .ml-capacity-heading {display: flex; justify-content: space-between; align-items: center; gap: 20px}
+.ml-overview-heading h2, .ml-capacity-heading h2 {font-size: 20px; letter-spacing: -.5px}
+.ml-overview-heading > div > span, .ml-capacity-heading p {display: block; font-size: 13px; line-height: 1.7; color: var(--muted); margin-top: 6px}
+.ml-time-controls {display: flex; gap: 12px; flex-wrap: wrap}
+.ml-page label {font-size: 13px; color: var(--muted)}
+.ml-time-controls label {display: flex; flex-direction: column; gap: 7px}
+.ml-page select, .ml-manual-fields input {background: #fff; border: 1px solid #e0e4ef; border-radius: 8px; color: #394157; padding: 10px 12px; min-width: 0; max-width: 100%}
+.ml-calculating {font-size: 13px; color: var(--muted); margin-top: 14px}
+.ml-dual-estimates {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px}
+.ml-estimate-card {padding: 22px; border: 1px solid #e0e7ff; border-radius: 13px; background: #edf1ff}
+.ml-estimate-card > span {display: flex; align-items: center; flex-wrap: wrap; gap: 7px; font-size: 14px; color: #325add}
+.ml-estimate-card > strong {display: block; font-size: 40px; font-family: Manrope, sans-serif; letter-spacing: -1px; color: var(--blue); margin-top: 12px}
+.ml-estimate-card small {font-size: 14px; font-weight: 400; letter-spacing: 0; margin-left: 8px; color: var(--muted)}
+.ml-estimate-card > p {font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.7}
+.ml-estimate-card.future {background: #f1edff; border-color: #e6dff7}
+.ml-estimate-card.future > span, .ml-estimate-card.future > strong {color: #7f60c8}
+.ml-records {border-top: 1px solid var(--line); margin-top: 22px; padding-top: 16px}
+.ml-page summary {cursor: pointer; list-style: none; font-size: 14px; line-height: 1.6}
+.ml-page summary::-webkit-details-marker {display: none}
+.ml-records > summary, .ml-technical > summary, .ml-method > summary, .ml-source > summary {display: flex; justify-content: space-between; align-items: center; gap: 12px; color: #52627f}
+.ml-page details[open] > summary > svg {transform: rotate(90deg)}
+.ml-input-stats {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 20px 0}
+.ml-input-stats span {font-size: 13px; color: var(--muted)}
+.ml-input-stats strong {display: block; font-size: 22px; margin-top: 6px}
+.ml-chart {width: 100%; height: auto; display: block; margin-top: 15px}
+.ml-chart-legend {display: flex; flex-wrap: wrap; gap: 15px; color: var(--muted); font-size: 12px}
+.ml-chart-legend span {display: inline-flex; align-items: center; gap: 6px}
+.ml-chart-legend i {display: inline-block; width: 16px; height: 3px; background: var(--blue)}
+.ml-chart-legend span:nth-child(2) i {background: #94a3b8}
+.ml-time-slider {width: 100%; accent-color: var(--blue); margin-top: 15px}
+.ml-sim-actions {display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 18px}
+.ml-sim-actions button, .ml-kind-tabs button {display: inline-flex; justify-content: center; align-items: center; gap: 7px; border-radius: 9px; padding: 11px 14px; background: #edf1ff; color: #325add; font-size: 14px}
+.ml-sim-actions small {flex-basis: 100%; color: var(--muted); font-size: 13px; line-height: 1.7}
+.ml-page .ml-text-button {display: inline-flex; align-items: center; gap: 6px; background: transparent; color: #52627f; padding: 7px 0; font-size: 13px}
+.ml-comparison {font-size: 13px; color: var(--muted); line-height: 1.8; margin-top: 18px}
+.ml-capacity-section {margin-top: 30px}
+.ml-capacity-heading {margin-bottom: 16px}
+.ml-city-select {display: flex; flex-direction: column; gap: 7px; flex-shrink: 0}
+.ml-kind-tabs {display: flex; gap: 6px; background: #edf0f7; border-radius: 11px; padding: 5px; margin-bottom: 16px}
+.ml-kind-tabs button {flex: 1; background: transparent; color: var(--muted)}
+.ml-kind-tabs button[aria-pressed=true] {background: #fff; color: var(--blue); box-shadow: 0 2px 6px #222b4010}
+.ml-exam-control {padding: 16px 18px; background: #fff9eb; border: 1px solid #f4e4b8; border-radius: 12px; margin-bottom: 14px}
+.ml-exam-switch {display: flex; align-items: center; gap: 9px; cursor: pointer}
+.ml-exam-switch input {margin-left: auto; accent-color: #946c0a; width: 18px; height: 18px}
+.ml-exam-settings {display: grid; grid-template-columns: 1fr 1fr; gap: 10px 15px; margin-top: 15px; border-top: 1px solid #f4e4b8; padding-top: 15px}
+.ml-exam-settings strong {margin-left: 8px; color: #946c0a}
+.ml-exam-settings input {width: 100%; accent-color: #946c0a}
+.ml-exam-settings p {grid-column: 1/-1; font-size: 13px; line-height: 1.8; color: #765b19}
+.ml-scenario-edit {margin-bottom: 20px}
+.ml-scenario-edit > summary {display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 10px 0; color: #52627f}
+.ml-scenario-edit > summary span {font-size: 12px; color: var(--muted)}
+.ml-scenario-edit[open] {background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px 18px}
+.ml-manual-fields {display: flex; align-items: end; flex-wrap: wrap; gap: 16px; margin-top: 12px}
+.ml-manual-fields label {display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 140px}
+.ml-manual-fields input {width: 100%; font-size: 17px}
+.ml-scenario-edit > p {margin-top: 12px; font-size: 13px; color: var(--muted); line-height: 1.8}
+.ml-venue-grid {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px}
+.ml-venue {background: #fff; border: 1px solid var(--line); border-radius: 15px; padding: 22px; min-width: 0}
+.ml-venue-top {display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 15px}
+.ml-venue-icon {display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 13px; background: #edf1ff; color: #325add}
+.ml-venue-icon.cafeteria {background: #fff5d7; color: #946c0a}
+.ml-venue-icon.gym {background: #f1edff; color: #7f60c8}
+.ml-level {font-size: 12px; padding: 6px 9px; border-radius: 6px; background: #f0f2f7; color: var(--muted)}
+.ml-level.quiet {background: #e8f6ef; color: #267b6b}
+.ml-level.moderate {background: #fff5d7; color: #946c0a}
+.ml-level.busy {background: #ffedf1; color: #b94e61}
+.ml-university {font-size: 13px; color: var(--muted)}
+.ml-venue h3 {font-size: 18px; line-height: 1.5; margin-top: 5px}
+.ml-location {display: flex; align-items: baseline; gap: 5px; color: var(--muted); font-size: 13px; line-height: 1.6; margin-top: 8px}
+.ml-ratio {display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 20px 0 13px}
+.ml-ratio > strong {font-size: 33px; font-family: Manrope, sans-serif; letter-spacing: -1px}
+.ml-ratio > span {text-align: right; color: #52627f; font-size: 14px}
+.ml-ratio small {display: block; font-size: 12px; color: var(--muted); margin-top: 5px}
+.ml-ratio b {font-weight: 500}
+.ml-progress {height: 6px; border-radius: 6px; background: #f0f2f7; overflow: hidden}
+.ml-progress i {display: block; height: 100%; background: #69b7a0; border-radius: 6px; transition: width .2s}
+.ml-progress.moderate i {background: #f3c659}
+.ml-progress.busy i {background: #e7a0a8}
+.ml-next-ratio {display: flex; align-items: center; flex-wrap: wrap; gap: 7px; border-top: 1px solid var(--line); margin-top: 16px; padding-top: 14px; font-size: 13px; color: var(--muted)}
+.ml-next-ratio strong {margin-left: auto; color: #7f60c8; font-size: 18px}
+.ml-next-ratio small {flex-basis: 100%; font-size: 12px; color: var(--muted)}
+.ml-exam-applied, .ml-gym-note {font-size: 12px; color: #946c0a; line-height: 1.8; margin-top: 14px}
+.ml-gym-note {color: var(--muted)}
+.ml-capacity-meta {display: flex; flex-wrap: wrap; gap: 5px; color: var(--muted); font-size: 12px; margin-top: 15px; line-height: 1.6}
+.ml-capacity-meta > span {margin-left: auto}
+.ml-source {border-top: 1px solid var(--line); margin-top: 16px; padding-top: 14px}
+.ml-source summary {font-size: 13px}
+.ml-source p, .ml-source small {font-size: 12px; line-height: 1.8; color: var(--muted); margin-top: 10px; display: block}
+.ml-source a, .ml-technical a {display: inline-flex; align-items: baseline; gap: 6px; color: var(--blue); font-size: 13px; line-height: 1.8; margin-top: 12px; overflow-wrap: anywhere}
+.ml-footnote {font-size: 13px; line-height: 1.8; color: var(--muted); margin-top: 17px}
+.ml-technical > summary > span {display: flex; align-items: center; gap: 8px}
+.ml-technical > div {padding-top: 15px}
+.ml-technical p {color: var(--muted); line-height: 1.9; font-size: 14px; margin-top: 12px}
+.ml-technical h3 {font-size: 16px; margin-top: 22px}
+.ml-table-wrap {overflow-x: auto; margin-top: 20px}
+.ml-table-wrap table {width: 100%; border-collapse: collapse; font-size: 13px}
+.ml-table-wrap caption {text-align: left; font-size: 12px; color: var(--muted); line-height: 1.7; padding-bottom: 12px}
+.ml-table-wrap th, .ml-table-wrap td {text-align: left; padding: 10px; border-bottom: 1px solid var(--line); white-space: nowrap}
+.ml-method {border-top: 1px solid var(--line); margin-top: 22px; padding-top: 15px}
+.ml-error {color: #b94e61 !important}
+.ml-empty, .ml-loading, .ml-load-error {text-align: center; padding: 45px 15px; color: var(--muted)}
+.ml-loading p, .ml-load-error p {margin-top: 15px; line-height: 1.8}
+.ml-load-error button {margin: 20px 0}
+.ml-load-error a {display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--blue)}
+@media (max-width: 1000px) {
+  .ml-overview-heading {flex-direction: column; align-items: flex-start}
+  .ml-time-controls {width: 100%}
+  .ml-time-controls label {flex: 1}
+}
+@media (max-width: 600px) {
+  .crowd-view-tabs .tabs {width: 100%}
+  .crowd-view-tabs .tabs button {flex: 1; font-size: 12px; gap: 5px; padding: 10px}
+  .ml-page-heading {flex-wrap: wrap; gap: 8px}
+  .ml-page h1 {font-size: 28px}
+  .ml-page-heading p {font-size: 14px}
+  .ml-overview, .ml-technical {padding: 17px}
+  .ml-overview-heading h2, .ml-capacity-heading h2 {font-size: 18px}
+  .ml-dual-estimates {gap: 10px}
+  .ml-estimate-card {padding: 14px}
+  .ml-estimate-card > span {font-size: 12px}
+  .ml-estimate-card > strong {font-size: 30px}
+  .ml-estimate-card small {font-size: 12px; margin-left: 5px}
+  .ml-estimate-card > p {font-size: 12px}
+  .ml-input-stats span {font-size: 12px}
+  .ml-capacity-heading {align-items: flex-start; gap: 10px}
+  .ml-kind-tabs button {font-size: 12px; padding: 10px 6px; gap: 4px}
+  .ml-exam-settings {grid-template-columns: 1fr}
+  .ml-exam-settings p {grid-column: auto}
+  .ml-venue-grid {grid-template-columns: 1fr}
+  .ml-scenario-edit > summary {align-items: flex-start; flex-direction: column; gap: 5px}
+  .ml-time-controls label {min-width: 125px}
+}
