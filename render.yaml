@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: frontend
+    runtime: node
+    repo: https://github.com/SudeUcarr/frontend
+    branch: main
+    plan: free
+    region: frankfurt
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: NPM_CONFIG_INCLUDE
+        value: dev
+      - key: VITE_API_BASE_URL
+        value: /api
+      - key: API_PROXY_TARGET
+        value: https://kampuskit-backend-25od.onrender.com

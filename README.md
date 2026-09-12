@@ -21,7 +21,7 @@ VITE_GOOGLE_MAPS_API_KEY=
 VITE_EMAIL_REMINDERS_ENABLED=false
 ```
 
-`API_PROXY_TARGET` geliştirme/preview proxy hedefidir; tarayıcı paketine girmez. Harita tarayıcı anahtarı referrer ve Maps JavaScript API kısıtlarıyla kullanılmalıdır. Supabase ve Places sunucu anahtarları backend'de tutulur.
+`API_PROXY_TARGET` geliştirme, preview ve üretim yayın sunucusunun proxy hedefidir; tarayıcı paketine girmez. Harita tarayıcı anahtarı referrer ve Maps JavaScript API kısıtlarıyla kullanılmalıdır. Supabase ve Places sunucu anahtarları backend'de tutulur.
 
 ## Klasörler
 
@@ -51,3 +51,9 @@ npm run preview
 `npm run build` yalnızca bu reponun `dist/` klasörünü üretir. GitHub Actions aynı kontrolleri repo kökünden çalıştırır. `dist/` statik sunucuya yayımlanabilir. Üretimde geliştirme Vite proxy'si yoktur; frontend origin'indeki `/api/` yolunu backend'e reverse proxy et. Backend `APP_ORIGIN` değerini frontend'in HTTPS origin'ine ayarla. HttpOnly oturum ve PKCE callback bu bağlantıyla çalışır. Örnek reverse proxy konfigürasyonu [deploy/nginx.conf](deploy/nginx.conf) dosyasında; adresleri kendi ortamına göre değiştir.
 
 Yoğunluk ML demosu `/#/demo/yogunluk?gorunum=ml` adresinde açılır. Tahminler backend'de hesaplanır; model ağırlıkları frontend'e taşınmaz. Ayrıntılar [ML](docs/ML.md) ve [API](docs/API.md) belgelerinde.
+
+## Render
+
+`npm start`, derlenmiş `dist/` dosyalarını sunar ve `/api` isteklerini `API_PROXY_TARGET` adresindeki ayrı backend'e aktarır. Dosya gövdeleri, yönlendirmeler ve HttpOnly çerezler korunur; Supabase bağlantısı backend'de kalır. Render'ın verdiği `PORT` kullanılır. Üretimde `HOST=0.0.0.0`, `NODE_ENV=production`, `VITE_API_BASE_URL=/api` ve `API_PROXY_TARGET` backend'in HTTPS origin'i olarak ayarlanır. Build komutu `npm ci --include=dev && npm run build`; sağlık yolu `/healthz`. Sunucu `.env.local` dosyasını otomatik okumaz; üretim değişkenlerini Render Environment bölümünde tanımla.
+
+Mevcut yayın adresi: https://frontend-ll4u.onrender.com. Backend `APP_ORIGIN` değeri bu origin ile aynı olmalıdır.
