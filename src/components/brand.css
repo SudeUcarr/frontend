@@ -1,0 +1,25 @@
+.brand-signature{gap:11px;letter-spacing:normal;min-width:0;width:fit-content;color:var(--ink)}
+.brand-emblem{display:inline-flex;width:46px;height:46px;flex-shrink:0;filter:drop-shadow(0 4px 8px #3658ed18);transition:filter .25s,transform .25s}
+.brand-emblem svg{width:100%;height:100%;display:block}
+.brand-wordmark{display:inline-flex;align-items:baseline;white-space:nowrap;line-height:1.25;font-family:Manrope,sans-serif;font-size:26px;transition:text-shadow .25s}
+.brand-name{font-weight:800;letter-spacing:-1.3px;color:var(--ink)}
+.brand-wordmark .brand-kit{position:relative;font-weight:650;font-style:italic;font-synthesis:style;letter-spacing:-1.1px;color:var(--blue);padding:0 2px 3px}
+.brand-kit:after{content:'';position:absolute;bottom:0;left:6px;right:0;height:3px;border-radius:5px;background:#ffcf60;transform:rotate(-7deg);transform-origin:left}
+.auth-aside>.brand-signature{gap:13px}.auth-aside .brand-emblem{width:54px;height:54px}.auth-aside .brand-wordmark{font-size:30px}
+.sidebar .brand-signature{gap:9px}.sidebar .brand-emblem{width:39px;height:39px}.sidebar .brand-wordmark{font-size:23px}
+.logo-fallback .brand-emblem{width:74px;height:74px;margin:12px}
+:where(main h1,main h2,main h3,.auth-story h1,.auth-title-line){transition:text-shadow .25s}
+.auth-login .auth-story>p,.auth-login .auth-card>p{transition:text-shadow .25s}
+.brand-signature:focus-visible .brand-wordmark{text-shadow:0 3px 13px #3658ed25}
+@media(hover:hover){
+  .brand-signature:hover .brand-emblem{filter:drop-shadow(0 7px 12px #3658ed36);transform:rotate(-4deg) translateY(-1px)}
+  .brand-signature:hover .brand-wordmark{text-shadow:0 3px 13px #3658ed25}
+  :where(main h1,main h2,main h3):hover{text-shadow:0 3px 12px #3658ed25,0 1px 2px #1b29401c}
+  .auth-login .auth-title-line:hover,.auth-login .auth-card>h1:hover{text-shadow:0 5px 22px #3658ed35,0 2px 3px #1b294024}
+  .auth-login .auth-story>p:hover,.auth-login .auth-card>p:hover{text-shadow:0 2px 8px #3658ed24}
+  :root[data-theme=dark] :where(main h1,main h2,main h3):hover,:root[data-theme=dark] .auth-title-line:hover{text-shadow:0 3px 18px #a3b5ff38,0 1px 3px #00000035}
+}
+@media(max-width:1000px){.sidebar .brand-wordmark{font-size:21px}.sidebar .brand-emblem{width:36px;height:36px}}
+@media(max-width:760px){.auth-aside .brand-emblem{width:43px;height:43px}.auth-aside .brand-wordmark{font-size:25px}.auth-aside>.brand-signature{gap:8px}}
+@media(max-width:380px){.auth-aside .brand-emblem{width:38px;height:38px}.auth-aside .brand-wordmark{font-size:21px}.auth-aside>.brand-signature{gap:7px}.landing-nav{padding-inline:16px}.landing-nav .brand-emblem{width:34px;height:34px}.landing-nav .brand-wordmark{font-size:20px}.landing-nav .brand-signature{gap:6px}.landing-nav>.button.small{padding-inline:12px;gap:8px}}
+@media(prefers-reduced-motion:reduce){.brand-signature:hover .brand-emblem{transform:none}}

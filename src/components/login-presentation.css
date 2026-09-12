@@ -1,0 +1,53 @@
+/* Login-only proportions keep the other account screens unchanged. */
+.auth-login .auth-aside h1{font-size:clamp(38px,4.1vw,62px);line-height:1.18}
+.auth-login .auth-title-line{display:block;color:var(--ink)}
+.auth-login .auth-title-line.accent{color:var(--blue)}
+.auth-login .auth-aside p{font-size:17px;line-height:1.8}
+.auth-login .auth-aside .eyebrow{font-size:12px;letter-spacing:1.6px}
+.auth-login .logo-showcase{height:clamp(320px,42vh,460px);margin-top:36px;margin-bottom:20px}
+.auth-login .logo-canvas{transform:scale(1.12);transform-origin:center}
+.auth-login .logo-showcase figcaption{font-size:13px}
+.auth-login .auth-card>h1{font-size:clamp(27px,2.6vw,34px);line-height:1.3}
+.auth-login .auth-card>p{font-size:16px;line-height:1.85}
+.auth-login .field>span,.auth-login .back-link{font-size:15px}
+
+.auth-login .auth-story .auth-title-line,
+.auth-login .auth-story>.eyebrow,
+.auth-login .auth-story>p{width:fit-content;max-width:100%;transform-origin:left center;transition:scale .28s cubic-bezier(.2,.65,.25,1),text-shadow .28s ease}
+@media(hover:hover){
+  .auth-login .auth-story .auth-title-line:hover{text-shadow:0 5px 22px #3658ed40,0 2px 3px #1b294024}
+  .auth-login .auth-story>.eyebrow:hover{text-shadow:0 3px 12px #3658ed45}
+  .auth-login .auth-story>p:hover{text-shadow:0 3px 12px #3658ed30}
+  :root[data-theme=dark] .auth-login .auth-story .auth-title-line:hover,
+  :root[data-theme=dark] .auth-login .auth-story>.eyebrow:hover,
+  :root[data-theme=dark] .auth-login .auth-story>p:hover{text-shadow:0 3px 18px #a3b5ff45,0 1px 3px #00000035}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .auth-login .auth-story .auth-title-line:hover{scale:1.035}
+  .auth-login .auth-story>.eyebrow:hover{scale:1.025}
+  .auth-login .auth-story>p:hover{scale:1.015}
+}
+
+@keyframes login-line-arrive{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes login-accent-light{from{background-position:100% 50%}to{background-position:0% 50%}}
+@media(prefers-reduced-motion:no-preference){
+  .auth-login .auth-story{animation:none}
+  .auth-login .auth-title-line{animation:login-line-arrive .7s cubic-bezier(.2,.65,.25,1) backwards}
+  .auth-login .auth-title-line:nth-child(2){animation-delay:.12s}
+  .auth-login .auth-title-line.accent{background:linear-gradient(110deg,var(--blue) 25%,#8975ee 50%,var(--blue) 75%);background-size:220% 100%;background-clip:text;color:transparent;animation:login-line-arrive .7s .24s backwards,login-accent-light 2.4s .9s ease-in-out backwards}
+  .auth-login .auth-story>.eyebrow{animation:login-line-arrive .55s .05s backwards}
+  .auth-login .auth-story>p{animation:login-line-arrive .7s .36s backwards}
+  .auth-login .auth-card>h1{animation:login-line-arrive .65s .15s backwards}
+  .auth-login .auth-card>p{animation:login-line-arrive .65s .27s backwards}
+}
+@media(max-width:760px){
+  .auth-login .auth-story h1{font-size:26px;line-height:1.2;letter-spacing:-1px}
+  .auth-login .logo-showcase{height:210px;margin-top:18px;margin-bottom:0}
+  .auth-login .logo-canvas{transform:scale(1.07)}
+  .auth-login .auth-card>h1{font-size:28px}
+}
+@media(max-width:380px){
+  .auth-login .auth-story h1{font-size:22px}
+  .auth-login .logo-showcase{height:195px;margin-top:14px}
+  .auth-login .auth-card>h1{font-size:26px}
+}

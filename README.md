@@ -57,3 +57,9 @@ Yoğunluk ML demosu `/#/demo/yogunluk?gorunum=ml` adresinde açılır. Tahminler
 `npm start`, derlenmiş `dist/` dosyalarını sunar ve `/api` isteklerini `API_PROXY_TARGET` adresindeki ayrı backend'e aktarır. Dosya gövdeleri, yönlendirmeler ve HttpOnly çerezler korunur; Supabase bağlantısı backend'de kalır. Render'ın verdiği `PORT` kullanılır. Üretimde `HOST=0.0.0.0`, `NODE_ENV=production`, `VITE_API_BASE_URL=/api` ve `API_PROXY_TARGET` backend'in HTTPS origin'i olarak ayarlanır. Build komutu `npm ci --include=dev && npm run build`; sağlık yolu `/healthz`. Sunucu `.env.local` dosyasını otomatik okumaz; üretim değişkenlerini Render Environment bölümünde tanımla.
 
 Mevcut yayın adresi: https://frontend-ll4u.onrender.com. Backend `APP_ORIGIN` değeri bu origin ile aynı olmalıdır.
+
+## Görünüm ve erişilebilirlik
+
+`src/modern.css` ortak renk değişkenlerini, açık/koyu temayı, responsive düzeni ve hareket tercihlerini yönetir. Tema seçimi `kampuskit-theme` anahtarıyla tarayıcıda saklanır; sistem tercihi de izlenebilir. `ThemeControl` ve `SpeechReading` tüm ekranlarda kullanılabilir. Sesli okuma tarayıcının konuşma özelliğini kullanır.
+
+Giriş ve hesap ekranlarındaki `Logo3D`, `public/kampuskit-logo.glb` modelini ve Three.js'i yalnızca gerektiğinde yükler. Görünmeyen sekme/alanlarda çizim durur, cihazın hareket azaltma tercihi izlenir ve animasyon elle duraklatılabilir. WebGL veya model yüklemesi başarısız olursa statik marka gösterilir. Kaynak GLB korunur; koyu tema kontrastı görüntüleme sırasında ayarlanır. Bu bileşenler backend veri ve oturum işlemlerini değiştirmez.

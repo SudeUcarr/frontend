@@ -3,6 +3,14 @@
 
 <head>
     <meta charset="UTF-8" />
+    <script>
+        try {
+            const preference = localStorage.getItem('kampuskit-theme');
+            const dark = preference === 'dark' || (preference !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+            document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        } catch { document.documentElement.dataset.theme = 'light'; }
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="theme-color" content="#2448db" />

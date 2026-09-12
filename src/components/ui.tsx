@@ -1,17 +1,16 @@
 import {useEffect,useRef,useState} from 'react'
 import type {ReactNode,FormEvent} from 'react'
 import {X,Search,Inbox,ArrowRight,LoaderCircle,AlertCircle,FileText} from 'lucide-react'
-import {Link} from 'react-router-dom'
 import {useStore,errorText} from '../lib/store'
 import {dataApi} from '../services/data'
-export function Brand(){return <Link className="brand" to="/"><span className="brand-icon">k<span>•</span></span>Kampüs<span>Kit</span></Link>}
+export {Brand} from './Brand'
 export function Empty({title='Henüz bir şey yok.',text='İlk kaydı sen ekleyebilirsin.'}:{title?:string;text?:string}){return <div className="empty"><Inbox size={32}/><h3>{title}</h3><p>{text}</p></div>}
 export function PageHead({eyebrow,title,description,children}:{eyebrow?:string;title:string;description:string;children?:ReactNode}){return <div className="page-head"><div>{eyebrow&&<span className="eyebrow">{eyebrow}</span>}<h1>{title}</h1><p>{description}</p></div>{children}</div>}
 export function SearchBox({value,onChange,placeholder='Ara…'}:{value:string;onChange:(s:string)=>void;placeholder?:string}){return <label className="search-box"><Search size={17}/><input aria-label={placeholder} placeholder={placeholder} value={value} onChange={e=>onChange(e.target.value)}/></label>}
 export function Badge({children,tone='blue'}:{children:ReactNode;tone?:string}){return <span className={'badge '+tone}>{children}</span>}
 export function Example({value}:{value?:boolean}){return value?<span className="example-tag">Örnek içerik</span>:null}
 export function ErrorBox({message}:{message:string}){return message?<div className="error-box" role="alert"><AlertCircle size={17}/><span>{message}</span></div>:null}
-export function Submit({busy,label='Kaydet'}:{busy:boolean;label?:string}){return <button className="button" disabled={busy} type="submit">{busy?<LoaderCircle className="spin" size={18}/>:null}{busy?'Kaydediliyor…':label}{!busy&&<ArrowRight size={16}/>}</button>}
+export function Submit({busy,disabled=false,label='Kaydet'}:{busy:boolean;disabled?:boolean;label?:string}){return <button className="button" disabled={busy||disabled} type="submit">{busy?<LoaderCircle className="spin" size={18}/>:null}{busy?'Kaydediliyor…':label}{!busy&&<ArrowRight size={16}/>}</button>}
 export function Field({label,children,wide=false}:{label:string;children:ReactNode;wide?:boolean}){return <label className={'field '+(wide?'wide':'')}><span>{label}</span>{children}</label>}
 export function Modal({title,onClose,children,wide=false}:{title:string;onClose:()=>void;children:ReactNode;wide?:boolean}){const ref=useRef<HTMLDialogElement>(null),close=useRef(onClose);useEffect(()=>{close.current=onClose},[onClose]);useEffect(()=>{const d=ref.current;const old=document.activeElement as HTMLElement|null;d?.showModal();const cancel=(e:Event)=>{e.preventDefault();close.current()};d?.addEventListener('cancel',cancel);return()=>{d?.removeEventListener('cancel',cancel);d?.close();old?.focus()}},[]);return <dialog ref={ref} className={'modal '+(wide?'modal-wide':'')} onClick={e=>{if(e.target===e.currentTarget)onClose()}}><header><h2>{title}</h2><button className="icon-button" onClick={onClose} aria-label="Pencereyi kapat"><X size={21}/></button></header>{children}</dialog>}
 export function useFormAction(onSuccess?:()=>void){const [busy,setBusy]=useState(false),[error,setError]=useState('');async function run(e:FormEvent,action:(f:FormData)=>Promise<void>){e.preventDefault();if(busy)return;const form=e.currentTarget as HTMLFormElement;const f=new FormData(form);setBusy(true);setError('');try{await action(f);onSuccess?.()}catch(err){setError(errorText(err))}finally{setBusy(false)}}return{busy,error,run}}
