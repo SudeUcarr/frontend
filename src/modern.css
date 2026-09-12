@@ -45,4 +45,6 @@ body{background:var(--page);color:var(--ink)}::selection{background:#a2b4ff66;co
   .landing-nav{padding-right:112px}
   .app-main .topbar{padding-right:150px}
   .auth-main{padding-top:70px}
+  body:has(.landing) .landing-nav{padding:22px 16px 72px!important}
+  body:has(.landing) .theme-control{top:82px;right:16px}
 }
